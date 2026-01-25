@@ -1,37 +1,249 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>💌 A message for you</title>
+
   <style>
-    body{font-family:Arial;display:flex;min-height:100vh;align-items:center;justify-content:center;background:#f6f2ff;margin:0}
-    .card{background:white;padding:28px;border-radius:18px;max-width:520px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.12)}
-    h1{margin:0 0 12px}
-    p{font-size:18px;line-height:1.5}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;margin:8px;font-weight:700}
-    .yes{background:#6d28d9;color:white}
-    .no{background:#e5e7eb;color:#111827}
+    :root{
+      --bg1:#f6f2ff;
+      --bg2:#ffe6f1;
+      --card:#ffffffcc;
+      --text:#1f1b2e;
+      --muted:#6b5f86;
+      --purple:#6d28d9;
+      --purple2:#8b5cf6;
+      --shadow: 0 18px 50px rgba(0,0,0,.18);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background: radial-gradient(1200px 600px at 20% 10%, var(--bg2), transparent 55%),
+                  radial-gradient(1000px 600px at 80% 90%, #d9c7ff, transparent 55%),
+                  linear-gradient(135deg, var(--bg1), #fff);
+      padding:24px;
+    }
+
+    /* floating hearts background */
+    .hearts{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      overflow:hidden;
+      z-index:0;
+      opacity:.9;
+    }
+    .heart{
+      position:absolute;
+      bottom:-40px;
+      font-size:18px;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,.12));
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp{
+      0%{ transform: translateY(0) translateX(0) scale(.9); opacity:0}
+      10%{opacity:1}
+      100%{ transform: translateY(-110vh) translateX(60px) scale(1.25); opacity:0}
+    }
+
+    .wrap{
+      position:relative;
+      z-index:1;
+      width:min(560px, 96vw);
+    }
+
+    .card{
+      background:var(--card);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 26px 22px;
+      text-align:center;
+      transform: translateY(0);
+      animation: pop .55s ease-out;
+    }
+    @keyframes pop{
+      from{transform: translateY(14px); opacity:0}
+      to{transform: translateY(0); opacity:1}
+    }
+
+    .topRow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:6px;
+    }
+
+    .bag{
+      width:56px;
+      height:56px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(135deg, rgba(109,40,217,.18), rgba(255,105,180,.18));
+      border: 1px solid rgba(109,40,217,.15);
+    }
+    .bag svg{ width:34px; height:34px; }
+
+    h1{
+      margin:0;
+      font-size: 28px;
+      letter-spacing:.2px;
+    }
+    p{
+      margin: 10px 0 16px;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(0,0,0,.06);
+      margin-bottom: 14px;
+      font-size: 13px;
+      color:#3b2b63;
+    }
+
+    .btns{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight: 800;
+      min-width: 160px;
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+      user-select:none;
+    }
+    a.btn:hover{ transform: translateY(-1px); }
+    a.btn:active{ transform: translateY(1px); }
+
+    .yes{
+      color:white;
+      background: linear-gradient(135deg, var(--purple), var(--purple2));
+      box-shadow: 0 14px 28px rgba(109,40,217,.28);
+    }
+    .yes:hover{ filter: brightness(1.03); }
+
+    .no{
+      color:#241a3a;
+      background: rgba(255,255,255,.8);
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 10px 22px rgba(0,0,0,.10);
+    }
+
+    .footer{
+      margin-top:16px;
+      font-size:12.5px;
+      color:#7b6aa7;
+      opacity:.95;
+    }
+
+    /* small sparkle */
+    .sparkle{
+      display:inline-block;
+      animation: twinkle 1.6s ease-in-out infinite;
+    }
+    @keyframes twinkle{
+      0%,100%{transform:scale(1); opacity:.7}
+      50%{transform:scale(1.15); opacity:1}
+    }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Hey 😊</h1>
-    <p>
-      I just wanted to ask something in a simple way…<br/>
-      do u really belive me💜
-    </p>
+  <!-- Floating hearts layer -->
+  <div class="hearts" aria-hidden="true" id="hearts"></div>
 
-    <!-- Change the number and message -->
-    <a class="btn yes" href="https://wa.me/949792166?text=Hey%20😊%20I%20saw%20your%20page%20and%20my%20answer%20is%3A%20Yes%20💜" target="_blank">
-      Yes 💜
-    </a>
+  <div class="wrap">
+    <div class="card">
+      <div class="topRow">
+        <div class="bag" title="A little gift vibe 🎒">
+          <!-- Simple bag SVG (no external images needed) -->
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M8 9V7.5A4 4 0 0 1 12 3.5a4 4 0 0 1 4 4V9" stroke="#6d28d9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6.5 9h11l1 11.5a2 2 0 0 1-2 2H7.5a2 2 0 0 1-2-2L6.5 9Z" fill="rgba(109,40,217,.12)" stroke="#6d28d9" stroke-width="2" />
+            <path d="M9 13h6" stroke="#6d28d9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10 16h4" stroke="#6d28d9" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h1>Hey 😊</h1>
+      </div>
 
-    <a class="btn no" href="https://wa.me/94769792166?text=Hey%20😊%20Thank%20you%20for%20asking.%20I%20prefer%20to%20say%20no%20🙏" target="_blank">
-      No 🙏
-    </a>
+      <div class="pill">💜 A small message… <span class="sparkle">✨</span></div>
 
-    <p style="font-size:13px;opacity:.75;margin-top:14px">Made with honesty ✨</p>
+      <p>
+        I just wanted to ask something in a simple way…<br/>
+        <strong style="color:#3b2b63">Do you really believe in me?</strong> 💜
+      </p>
+
+      <div class="btns">
+        <!-- WhatsApp number: 0769792166 -> 94769792166 -->
+        <a class="btn yes"
+           href="https://wa.me/94769792166?text=Hey%20😊%20I%20saw%20your%20page%20and%20my%20answer%20is%3A%20Yes%20💜"
+           target="_blank">
+          Yes 💜
+        </a>
+
+        <a class="btn no"
+           href="https://wa.me/94769792166?text=Hey%20😊%20Thank%20you%20for%20asking.%20I%20prefer%20to%20say%20no%20🙏"
+           target="_blank">
+          No 🙏
+        </a>
+      </div>
+
+      <div class="footer">Made with honesty ✨</div>
+    </div>
   </div>
+
+  <script>
+    // Create floating hearts
+    const hearts = document.getElementById("hearts");
+    const emojis = ["💜","💗","💕","💞","💘","❤️","💖"];
+    const count = 22;
+
+    for (let i = 0; i < count; i++) {
+      const h = document.createElement("div");
+      h.className = "heart";
+      h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      const left = Math.random() * 100;             // vw
+      const size = 14 + Math.random() * 18;         // px
+      const dur  = 6 + Math.random() * 8;           // seconds
+      const delay= Math.random() * 5;               // seconds
+      h.style.left = left + "vw";
+      h.style.fontSize = size + "px";
+      h.style.animationDuration = dur + "s";
+      h.style.animationDelay = delay + "s";
+      hearts.appendChild(h);
+    }
+  </script>
 </body>
 </html>
+
