@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Me | Eranda Vishwa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#09090f;
+color:white;
+}
+
+header{
+position:sticky;
+top:0;
+background:#0f0f17;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #242437;
+}
+
+header img{
+height:55px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+opacity:.8;
+transition:.3s;
+}
+
+nav a:hover{
+color:#a78bfa;
+opacity:1;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:70px auto;
+}
+
+.hero{
+display:grid;
+grid-template-columns:300px 1fr;
+gap:60px;
+align-items:center;
+margin-bottom:80px;
+}
+
+.hero img{
+width:280px;
+height:280px;
+object-fit:cover;
+border-radius:50%;
+border:3px solid #8b5cf6;
+box-shadow:0 0 35px rgba(139,92,246,.4);
+}
+
+h1{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.subtitle{
+color:#a78bfa;
+margin-bottom:30px;
+font-size:20px;
+}
+
+p{
+color:#b8b8c8;
+line-height:1.8;
+font-size:17px;
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-top:60px;
+}
+
+.card{
+background:#131320;
+padding:30px;
+border-radius:18px;
+border:1px solid rgba(139,92,246,.2);
+}
+
+.card h2{
+margin-bottom:20px;
+color:#a78bfa;
+}
+
+.card ul{
+padding-left:20px;
+line-height:2;
+color:#d5d5df;
+}
+
+.back{
+display:inline-block;
+margin-top:60px;
+padding:12px 22px;
+background:#8b5cf6;
+border-radius:10px;
+color:white;
+text-decoration:none;
+}
+
+.back:hover{
+background:#6d28d9;
+}
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero img{
+margin:auto;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html">
+<img src="logo.png">
+</a>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="projects.html">Projects</a>
+
+<a href="index.html#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="hero">
+
+<img src="me.png">
+
+<div>
+
+<h1>About Me</h1>
+
+<div class="subtitle">
+ICT Undergraduate • Networking • Cybersecurity
+</div>
+
+<p>
+I'm Eranda Vishwa, an ICT undergraduate at the University of Kelaniya with a strong passion for Computer Networking, Cybersecurity, and Linux systems.
+</p>
+
+<p>
+I enjoy designing enterprise networks, building cybersecurity home labs, solving technical problems, and continuously learning new technologies through hands-on projects.
+</p>
+
+<p>
+My goal is to become a Network Security Engineer while contributing to innovative IT solutions and improving my practical skills through internships and real-world experience.
+</p>
+
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>Education</h2>
+
+<ul>
+
+<li>Bachelor of Information and Communication Technology (Honours)</li>
+
+<li>University of Kelaniya</li>
+
+<li>Specialization: Computer Systems Networking & Telecommunications</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Areas of Interest</h2>
+
+<ul>
+
+<li>Computer Networking</li>
+
+<li>Cybersecurity</li>
+
+<li>Kali Linux</li>
+
+<li>Linux Administration</li>
+
+<li>System Administration</li>
+
+<li>IoT Technologies</li>
+
+<li>Cloud Computing</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Tools & Technologies</h2>
+
+<ul>
+
+<li>Cisco Packet Tracer</li>
+
+<li>Kali Linux</li>
+
+<li>VirtualBox</li>
+
+<li>Git & GitHub</li>
+
+<li>VS Code</li>
+
+<li>HTML • CSS • JavaScript</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Leadership</h2>
+
+<ul>
+
+<li>Co-Director – Regional Engagement Avenue</li>
+
+<li>Rotaract Club of University of Kelaniya</li>
+
+<li>Project Coordination</li>
+
+<li>Community Service</li>
+
+<li>Leadership & Teamwork</li>
+
+</ul>
+
+</div>
+
+<a href="index.html" class="back">
+← Back to Home
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

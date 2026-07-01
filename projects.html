@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Eranda Vishwa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Space Grotesk',sans-serif;
+}
+
+body{
+background:#09090f;
+color:white;
+}
+
+header{
+position:sticky;
+top:0;
+background:#0d0d15;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+header a{
+color:white;
+text-decoration:none;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:80px auto;
+}
+
+h1{
+font-size:52px;
+margin-bottom:10px;
+}
+
+.subtitle{
+color:#9d8cff;
+margin-bottom:60px;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.card{
+background:#141420;
+border:1px solid rgba(167,139,250,.2);
+border-radius:18px;
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 40px rgba(139,92,246,.25);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+}
+
+.card h2{
+margin-bottom:12px;
+}
+
+.card p{
+color:#bdbdd0;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.btns{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:10px 18px;
+background:#8b5cf6;
+color:white;
+text-decoration:none;
+border-radius:10px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#6d28d9;
+}
+
+.back{
+display:inline-block;
+margin-top:60px;
+text-decoration:none;
+color:#9d8cff;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html">
+← Back to Portfolio
+</a>
+
+<img src="logo.png" height="45">
+
+</header>
+
+<div class="container">
+
+<h1>My Projects</h1>
+
+<p class="subtitle">
+Networking • Cybersecurity • IoT • Web Development
+</p>
+
+<div class="projects">
+
+<div class="card">
+
+<img src="https://placehold.co/600x400/171726/ffffff?text=Packet+Tracer">
+
+<div class="card-content">
+
+<h2>Enterprise Network Design</h2>
+
+<p>
+Designed and simulated an enterprise network using Cisco Packet Tracer with VLANs, DHCP, DNS and routing.
+</p>
+
+<div class="btns">
+
+<a href="#" class="btn">GitHub</a>
+
+<a href="#" class="btn">Details</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://placehold.co/600x400/171726/ffffff?text=Kali+Linux">
+
+<div class="card-content">
+
+<h2>Kali Linux Home Lab</h2>
+
+<p>
+Built a personal cybersecurity lab for penetration testing, vulnerability scanning and Linux practice.
+</p>
+
+<div class="btns">
+
+<a href="#" class="btn">GitHub</a>
+
+<a href="#" class="btn">Details</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://placehold.co/600x400/171726/ffffff?text=Calculator">
+
+<div class="card-content">
+
+<h2>Scientific Calculator</h2>
+
+<p>
+Responsive scientific calculator developed using TypeScript with advanced mathematical functions.
+</p>
+
+<div class="btns">
+
+<a href="#" class="btn">GitHub</a>
+
+<a href="#" class="btn">Live Demo</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://placehold.co/600x400/171726/ffffff?text=IoT">
+
+<div class="card-content">
+
+<h2>IoT Smart Bin</h2>
+
+<p>
+Smart waste management system with IoT sensors and mobile notifications.
+</p>
+
+<div class="btns">
+
+<a href="#" class="btn">GitHub</a>
+
+<a href="#" class="btn">Details</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<a class="back" href="index.html">
+← Back to Home
+</a>
+
+</div>
+
+</body>
+</html>
